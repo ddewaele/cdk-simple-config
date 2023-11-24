@@ -1,14 +1,23 @@
-# Welcome to your CDK TypeScript project!
+# Testing CDK config project
 
-This is a blank project for TypeScript development with CDK.
+When running `NODE_ENV="tst" npx aws-cdk ls` the cdk fails with
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+```
+/Users/davydewaele/Projects/Aws/cdk-simple-config/node_modules/config/lib/config.js:423
+      Object.defineProperty(object, propertyName, {
+             ^
+TypeError: Cannot redefine property: bundlingDockerImage
+    at Function.defineProperty (<anonymous>)
+    at Config.util.makeImmutable (/Users/davydewaele/Projects/Aws/cdk-simple-config/node_modules/config/lib/config.js:423:14)
+    at Config.util.makeImmutable (/Users/davydewaele/Projects/Aws/cdk-simple-config/node_modules/config/lib/config.js:414:32)
+    at Config.util.makeImmutable (/Users/davydewaele/Projects/Aws/cdk-simple-config/node_modules/config/lib/config.js:414:32)
+    at Config.util.makeImmutable (/Users/davydewaele/Projects/Aws/cdk-simple-config/node_modules/config/lib/config.js:414:32)
+    at Config.get (/Users/davydewaele/Projects/Aws/cdk-simple-config/node_modules/config/lib/config.js:170:12)
+    at Object.<anonymous> (/Users/davydewaele/Projects/Aws/cdk-simple-config/bin/cdk-simple-config.ts:21:37)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module.m._compile (/Users/davydewaele/Projects/Aws/cdk-simple-config/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
 
-## Useful commands
+Subprocess exited with error 1
+```
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
