@@ -1,5 +1,7 @@
 # Testing CDK config project
 
+Testing the nodejs `config` library for environment specific configs.
+
 When running `NODE_ENV="tst" npx aws-cdk ls` the cdk fails with
 
 ```
