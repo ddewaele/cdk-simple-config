@@ -1,6 +1,6 @@
 # Testing CDK config project
 
-Testing the nodejs `config` library for environment specific configs.
+Testing the nodejs [config](https://github.com/node-config/node-config) library for environment specific configs.
 
 When running `NODE_ENV="tst" npx aws-cdk ls` the cdk fails with
 
